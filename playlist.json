@@ -1,0 +1,28 @@
+{
+    "playlist": [
+        {
+            "url": "img/img0.jpg",
+            "caption": "A bird perching on a twig."
+        },
+        {
+            "url": "img/img1.jpg",
+            "caption": "Lions lounging on the grass."
+        },
+        {
+            "url": "img/img2.jpg",
+            "caption": "Seagulls gazing collectively."
+        },
+        {
+            "url": "img/img3.jpg",
+            "caption": "Snail on a table."
+        },
+        {
+            "url": "img/img4.jpg",
+            "caption": "A lone wolf looks on..."
+        }
+    ],
+
+   "hold_time":2,
+		"loops":2,
+	 "transition_time":1
+}

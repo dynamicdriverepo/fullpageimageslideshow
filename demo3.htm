@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Full Page Slideshow Demo 1</title>
+	<link rel="stylesheet" type="text/css" href="smooth_slider.css">
+
+	<style>
+
+	html,body { /* For full page slideshow that spans entire page (with no other content), the below CSS is needed */
+		height:100%;
+		padding:0px;
+		margin:0px;
+	}
+
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="jquery-slider.js">
+
+		/***********************************************
+		* Full Page Slideshow- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+		* This notice MUST stay intact for legal use
+		* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+		***********************************************/
+
+	</script>
+	<script>
+		$(function() {
+			$('#resume').on('click', function(){ // set up resume button behavior
+				$("#pan_area").smoothslider("resume") // resume playing of this slideshow. Pass in "pause" to pause it instead
+				$(this).hide() // hide resume button
+			})
+		
+		
+			$("#pan_area").smoothslider("install", {
+				// either "playlist" or "playlist_url" must be specified.
+
+				// "playlist" is a list of dictionaries. Each dictionary specifies the necessary information
+				// to display one image and it can have the following fields:
+				//    "url" - url of the image
+				//    "caption" - a text to pass to the on_image_change when the given image is going
+				//                to be displayed
+				//    "slide" - specifies how the sliding should occur. It's a dictionary with the
+				//                following values:
+				//         "x1" - initial x position. The range is 0 ... image width
+				//         "x2" - final x position. The range is 0 ... image width
+				//         "y1" - initial y position. The range is 0 ... image height
+				//         "y2" - final y position. The range is 0 ... image height
+				//         "z1" - initial zoom. It should be >= 1
+				//         "z2" - final zoom. It should be >= 1
+				//         "hint" -  can be one of:
+				//              "zoom" - zoom
+				//              "hpan" - pan horizontally
+				//              "vpan" - pan vertically
+				//
+				//         When the browser has limited support, the plugin will only perform 
+				//         one motion (horizontal/vertical panning or zooming).
+				//         If "hint" is used, then the specified motion is used instead.
+				//         If "slide" is not specified, then a random motion is used
+				//         If "slide" has an empty dictionary, then no motion is performed
+
+				// "playlist_url" is a url of a json file which specifies among other things
+				// a playlist. Besides that, it can also contain some parameters,
+				// which if specified, will override the ones specified when calling smoothslider.
+				// Besides the playlist, the parameters that can be specified in the json file are:
+				// 
+				// "preload_images", "anim_fps", "transition_time", "hold_time", "loops"
+			
+				"playlist":[
+							{"url":"img/img0.jpg", 
+							 "caption":"Zoom 1n",
+							 "slide":{"z1":1, "z2":1.5}}, // zoom in (magnification from 1 to 1.5)
+
+							{"url":"img/img1.jpg",
+							"caption":"Zoom Out",
+							 "slide":{"z1":2, "z2":1}}, // zoom out
+
+							{"url":"img/img2.jpg",
+							"caption":"Pan up",
+							 "slide":{"y1":0, "y2":200}}, // pan up
+
+							{"url":"img/img3.jpg",
+							 "caption": "Pan left",
+							 "slide":{"x1":0, "x2":20, "z1":1}}, // pan left
+
+							{"url":"img/img4.jpg", "caption":"No Slide Animation","slide":{}} // no slide
+							],
+
+
+				"loops":2, // play everything twice and then pause. If not specified, the slider will
+				           // play indefinitely
+	
+		   "hold_time":2,
+			 "transition_time":1,
+
+				// this function gets called whenever there's an image change
+				"on_image_change":function(caption, image_url) { 
+						var area= $("#img_msg_area").find("span");
+						area.animate({"opacity": 0}, 500, "swing", function() {
+							area.text(caption);
+							area.animate({"opacity": 1}, 500); // fade in & out take 500ms each
+						});
+					},
+				"throbber":$("#throbber"), // an image to show when waiting for images to load
+				on_pause:function(){
+					$('#resume').show()
+				}
+
+			});
+		});
+
+	</script>
+</head>
+<body>
+
+
+<div id="throbber"><img src="img/throbber.gif"></div>
+<div id="resume" style="display:none">Replay</div>
+<div id="pan_area" style="height:100%"></div>
+<div id="img_msg_area"><span></span></div>
+<div id="static_text_area">There is nothing more amazing than nature, the miracle that is every creature in her domain. The birds, the lions, down to every insect, together they form the circle of life that supports each other.</div>
+
+</body>
+</html>

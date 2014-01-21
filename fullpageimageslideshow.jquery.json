@@ -1,0 +1,25 @@
+{
+  "name": "fullpageimageslideshow",
+  "title": "Full Page Image slideshow",
+  "description": "This is a supersized slideshow that automatically expands to fill up the container it's in to let you display a slideshow that either covers the entire visible screen, or a certain section inside the page.  Each image is panned or zoomed in and out into view, adding intrigue and flare.",
+  "keywords": ["slideshow", "gallery", "image"],
+  "version": "1.0.0",
+  "author": {
+    "name": "Dynamic Drive",
+    "email" : "ddrivehelp@gmail.com",
+		"url": "http://www.dynamicdrive.com"
+  },
+  "licenses": [
+    {
+      "type": "Freeware",
+      "url": "http://www.dynamicdrive.com/notice.htm"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.10"
+  },
+  "homepage": "http://www.dynamicdrive.com/dynamicindex14/fullpageslideshow/index.htm",
+  "docs": "http://www.dynamicdrive.com/dynamicindex14/fullpageslideshow/index.htm",
+  "demo": "http://www.dynamicdrive.com/dynamicindex14/fullpageslideshow/index.htm",
+  "download": "http://www.dynamicdrive.com/dynamicindex14/fullpageslideshow/index.htm"
+}

@@ -1,0 +1,23 @@
+{
+    "playlist": [
+        {
+            "url": "img/image.php?n=0",
+            "caption": "Any caption here..."
+        },
+        {
+            "url": "img/image.php?n=1",
+            "caption": "A cheetah"
+        },
+        {
+            "url": "img/image.php?n=2",
+            "caption": "A sand cat kitten"
+        },
+        {
+            "url": "img/image.php?n=3",
+            "caption": "Now some tigers"
+        }
+    ],
+
+    "hold_time":5,
+	"transition_time":1
+}
